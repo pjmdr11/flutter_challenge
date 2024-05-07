@@ -1,12 +1,11 @@
 import 'package:curl_logger_dio_interceptor/curl_logger_dio_interceptor.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_challenge/src/core/constants/api_constants.dart';
 import 'package:flutter_challenge/src/core/constants/env_constants.dart';
 import 'package:flutter_challenge/src/core/constants/mock_responses.dart';
 import 'package:flutter_challenge/src/data/source/local/env_helper.dart';
 import 'package:http_mock_adapter/http_mock_adapter.dart';
 import 'package:injectable/injectable.dart';
-import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 @module
@@ -83,7 +82,11 @@ abstract class DioModule {
           ..onGet("/countries", (server) {
             return server.reply(200, countryMockResponse,
                 isRedirect: true, delay: const Duration(seconds: 1));
-          }, headers: {}, queryParameters: {}, data: null);
+          }, headers: {}, queryParameters: {}, data: null)
+          ..onGet("/countries/223/states", (server) {
+            return server.reply(200, statesMockResponse,
+                isRedirect: true, delay: const Duration(seconds: 2));
+          });
 
     return adapter;
   }

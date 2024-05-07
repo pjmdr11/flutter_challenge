@@ -22,6 +22,7 @@ class SubmitButton extends StatelessWidget {
             child: SizedBox(
               width: double.infinity,
               child: ElevatedButton(
+                key: const ValueKey("submit"),
                 onPressed: () {
                   FocusScope.of(context).unfocus();
                   final countryCubit = getIt<CountryCubit>();

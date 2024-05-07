@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter_challenge/src/domain/entities/location_model.dart';
+// ignore: depend_on_referenced_packages
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'location_model.freezed.dart';

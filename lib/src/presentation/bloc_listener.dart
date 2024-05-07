@@ -10,13 +10,9 @@ class SimpleBlocObserver extends BlocObserver {
         print("---STATE--CHANGED--");
         print("---STATE--CHANGED--${change.currentState}={change.nextState}");
         print("---STATE--CHANGED--");
-      } catch (e) {}
+      } catch (e) {
+        print(e);
+      }
     }
-    // LogUtils.logError("----------------STATE CHANGED--------------",
-    //     "---------------------------");
-    // LogUtils.logError(
-    //     "----------------STATE CHANGED--------------", change.nextState);
-    // LogUtils.logError("----------------STATE CHANGED--------------",
-    //     "---------------------------");
   }
 }

@@ -14,6 +14,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        key: const ValueKey("homepage"),
         appBar: AppBar(
           title: const Text("Please select your region"),
         ),

@@ -6,6 +6,7 @@ class AppException implements Exception {
 
   AppException({this.statusCode, this.code, this.message, this.details});
 
+  @override
   String toString() {
     return "[$code]: $message \n $details";
   }

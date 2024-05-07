@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_challenge/src/core/route/route_utils.dart';
 import 'package:flutter_challenge/src/presentation/widgets/slideup_animation_widget.dart';
@@ -12,7 +14,9 @@ class RegionSelectionDetailsPage extends StatelessWidget {
     Map<String, dynamic> routeArgs = RouteUtils.generateRouteArguments(context);
     String country = routeArgs["country"].value;
     String state = routeArgs["state"].value;
+    final shouldShowAnimation = Platform.environment.containsKey('FLUTTER_TEST');
     return Scaffold(
+      key: const ValueKey("selection_details"),
       appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(32.0),
@@ -20,9 +24,11 @@ class RegionSelectionDetailsPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
-                child: Lottie.asset("assets/lottie/lottie_home.json",
-                    height: 230)),
+            shouldShowAnimation
+                ? Container()
+                : Center(
+                    child: Lottie.asset("assets/lottie/lottie_home.json",
+                        key: const ValueKey("lottie_anim"), height: 230)),
             SlideUpAnimationWidget(
               delay: initialDelay,
               child: Text(

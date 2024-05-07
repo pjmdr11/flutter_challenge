@@ -1,3 +1,4 @@
+// ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_challenge/src/core/resources/data_state.dart';
