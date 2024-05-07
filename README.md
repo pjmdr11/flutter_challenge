@@ -1,16 +1,29 @@
-# flutter_challenge
+# Flutter Challenge
 
-A new Flutter project.
+Flutter project sample with *country* and *states* dropdown for location selection.
+This project demonstrates usage of 
+- Flutter Clean Architecture.
+-  Statemanagement using *[Flutter Bloc](https://pub.dev/packages/flutter_bloc)*
+- Dependency Injection using *[GetIt](https://pub.dev/packages/get_it)* and *[Injectables](https://pub.dev/packages/injectable)*
+-	Network calls using *[Dio](https://pub.dev/packages/dio)*
+- *[Freezed](https://pub.dev/packages/freezed)* for code generation.
 
-## Getting Started
+# Getting Started
+1. Setup Flutter
+2. Clone the repo
+			
 
-This project is a starting point for a Flutter application.
+	    $git clone git@github.com:pjmdr11/flutter_challenge.git
+	    $cd flutter_challenge
+	    $flutter pub get
+		
+3. Create two files namely **.env** and **.env.dev** in the root of the project folder and populate the env file according to the **.env.example**
+	*Sample*
+	
 
-A few resources to get you started if this is your first Flutter project:
+        API_BASE_URL="server_base_url"
+    	API_KEY="api_key"
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+4. Run the project.
+	
+	`flutter run`
