@@ -38,7 +38,7 @@ class CountryDropdown extends StatelessWidget {
                       homepageCubit.setSelectedCountryId(id ?? -1);
                       FocusScope.of(context).unfocus();
                     },
-                    requestFocusOnTap: false,
+                    requestFocusOnTap: true,
                     expandedInsets: const EdgeInsets.all(0),
                     enableSearch: true,
                     enableFilter: true,
